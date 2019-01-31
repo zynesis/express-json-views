@@ -53,7 +53,10 @@ Views are defined using json files and located in a single directory in your pro
 	"comments": {
 		"view": "comment"
 	},
-	"published_date": {}
+	"published_date": {
+		"format": "customDateFormat",
+		"dateFormat": "YYYY-MM-DD"
+	}
 }
 ```
 The keys of the view are the keys which will be rendered into to resulting object.
@@ -90,6 +93,11 @@ var helpers = {
         	return null;
         }
         return dateFormat(value, 'yyyy-mm-dd');
+	},
+	customDateFormat: function(value,object,options){
+		if (!value) return null;
+		var format = options.dateFormat || "yyyy-mm-dd";
+		return dateFormat(value,format);
 	}
 };
 
@@ -99,8 +107,11 @@ app.engine('json', viewEngine({ helpers: helpers }));
 Helper functions get 2 arguments, value and the full object. To calculate a value based on other values
 in the object you can use the second argument.
 ```js
+// value: the value of the field
+// object: the object of the data where the value come from
+// options passed to the parameter of view
 var helpers = {
-	comment_count: function (value, object) {
+	comment_count: function (value, object,options) {
 		// Value will be null since this is a dynamic property and not present in the data object
 		return object.comments ? object.comments.length : 0;
 	}

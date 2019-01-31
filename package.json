@@ -1,6 +1,6 @@
 {
   "name": "express-json-views",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A JSON view engine for express",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/freshfox/express-json-views.git"
+    "url": "git+ssh://git@github.com/zynesis/express-json-views.git"
   },
   "keywords": [
     "express",
@@ -19,12 +19,12 @@
     "rest",
     "api"
   ],
-  "author": "Dominic Bartl",
+  "author": "Zynesis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/freshfox/express-json-views/issues"
+    "url": "https://github.com/zynesis/express-json-views/issues"
   },
-  "homepage": "https://github.com/freshfox/express-json-views#readme",
+  "homepage": "https://github.com/zynesis/express-json-views#readme",
   "dependencies": {
     "bluebird": "^3.4.6",
     "graceful-fs": "^4.1.10",
